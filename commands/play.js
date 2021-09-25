@@ -14,7 +14,6 @@ module.exports = class extends SlashCommand {
           required: true
         }
       ],
-
       guildIDs: process.env.DISCORD_GUILD_ID ? [ process.env.DISCORD_GUILD_ID ] : undefined
     });
   }

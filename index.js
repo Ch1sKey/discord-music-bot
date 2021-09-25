@@ -6,12 +6,14 @@ const { Player } = require('discord-player');
 const { registerPlayerEvents } = require('./events');
 const { generateDocs } = require('./docs');
 
+
 dotenv.config();
 
 const client = new Client({
   intents: [
     'GUILDS',
-    'GUILD_VOICE_STATES'
+    'GUILD_VOICE_STATES',
+    'GUILD_MEMBERS',
   ]
 });
 
@@ -38,8 +40,15 @@ creator
   )
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
-if (process.env.DISCORD_GUILD_ID) creator.syncCommandsIn(process.env.DISCORD_GUILD_ID);
-else creator.syncCommands();
+if (process.env.DISCORD_GUILD_ID) {
+  creator.syncCommandsIn(process.env.DISCORD_GUILD_ID)
+    .then(() => creator.syncCommandPermissions())
+    .then(() => console.log('commands synced'));
+} else {
+  creator.syncCommands()
+    .then(() => creator.syncCommandPermissions());
+}
+
 
 client.login(process.env.DISCORD_CLIENT_TOKEN);
 

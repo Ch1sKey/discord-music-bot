@@ -2068,10 +2068,10 @@
   "resolved" "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.3.tgz"
   "version" "3.0.3"
 
-"slash-create@^4.0.1":
-  "integrity" "sha512-UdQBbLLubYJiH7Zm1asyFL7/iENMCDmrKHQPNyzWp/Iv5ywSB7kIB/Jhszt1sYKMtLbVggx4bcmAkLz5VPFanA=="
-  "resolved" "https://registry.npmjs.org/slash-create/-/slash-create-4.0.1.tgz"
-  "version" "4.0.1"
+"slash-create@^4.2.0":
+  "integrity" "sha512-6lT7fsRh6J0ye/YmPBzTGSw2m/KSueuRGfEOMkUBhYLroC1FaDsjFiIjUn8v7YUTpxtom3ayR8dHY2n/RRUPgw=="
+  "resolved" "https://registry.npmjs.org/slash-create/-/slash-create-4.2.0.tgz"
+  "version" "4.2.0"
   dependencies:
     "@discordjs/collection" "^0.2.1"
     "eventemitter3" "^4.0.7"
